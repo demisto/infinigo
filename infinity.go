@@ -126,7 +126,7 @@ func SetKey(key string) OptionFunc {
 }
 
 // SetHTTPClient can be used to specify the http.Client to use when making
-// HTTP requests to X-Force.
+// HTTP requests to Infinity API.
 func SetHTTPClient(httpClient *http.Client) OptionFunc {
 	return func(c *Client) error {
 		if httpClient != nil {
@@ -138,7 +138,7 @@ func SetHTTPClient(httpClient *http.Client) OptionFunc {
 	}
 }
 
-// SetURL defines the URL endpoint X-Force
+// SetURL defines the URL endpoint for Infinity
 func SetURL(rawurl string) OptionFunc {
 	return func(c *Client) error {
 		if rawurl == "" {
