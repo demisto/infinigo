@@ -334,6 +334,7 @@ func (c *Client) Upload(confirmCode string, data io.Reader) (resp map[string]Upl
 	if _, err = io.Copy(gw, data); err != nil {
 		return
 	}
+	gw.Close()
 	resp = make(map[string]UploadResponse)
 	err = c.do("PUT", "u/"+confirmCode, nil, buf, buf.Len(), &resp)
 	return
